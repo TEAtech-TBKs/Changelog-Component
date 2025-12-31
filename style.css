@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #f7f7f7;
+  padding: 40px;
+}
+
+.changelog-card {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.changelog-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.changelog-header h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.changelog-header p {
+  font-size: 16px;
+  color: #777;
+}
+
+/* Timeline */
+
+.timeline {
+  list-style: none;
+  position: relative;
+  padding-left: 0;
+  margin-bottom: 40px;
+}
+
+/* Vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 48.3%;
+  width: 2px;
+  background: #000000;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.timeline-item time {
+  width: 45%;
+  text-align: right;
+  font-size: 16px;
+  color: #999;
+}
+
+.timeline-item .dot {
+  width: 10px;
+  height: 10px;
+  background: #111;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.timeline-item .content {
+  width: 45%;
+  font-size: 16px;
+  color: #222;
+}
+
+/* Button */
+
+.cta {
+  text-align: center;
+}
+
+.cta button {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cta button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .changelog-card {
+    padding: 24px;
+  }
+
+  .timeline::before {
+    left: 47.4%;
+  }
+
+  .timeline-item time,
+  .timeline-item .content {
+    width: 44%;
+    font-size: 14px;
+  }
+}
+@media (max-width: 425px) {
+  .timeline::before {
+    left: 49.7%;
+    transform: none;
+  }
+}
+@media (max-width: 320px) {
+  .timeline::before {
+    left: 49.5%;
+    transform: none;
+  }
+}
